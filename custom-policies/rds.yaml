@@ -28,13 +28,13 @@ policies:
   - name: rds-unused-databases-notify-step1
     resource: rds
     description: |
-      Take the average number of connections over 14 days for databases that are greater than 14
+      Take the average number of connections over 15 days for databases that are greater than 14
       days old and notify the resources owner on any unused RDS.
     filters:
       - type: value
         value_type: age
         key: InstanceCreateTime
-        value: 14
+        value: 15
         op: greater-than
       - <<: *metrics-filter
     actions:

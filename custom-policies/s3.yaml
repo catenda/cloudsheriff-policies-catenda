@@ -30,8 +30,6 @@ policies:
             Filter:
                Prefix: /
             Transitions:
-              - Days: 1
-                StorageClass: STANDARD_IA
               - Days: 180
                 StorageClass: STANDARD_IA
             NoncurrentVersionExpiration:

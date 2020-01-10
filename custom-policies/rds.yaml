@@ -16,6 +16,7 @@ policies:
     resource: rds
     mode:
       type: cloudtrail
+      role: arn:aws:iam::529219089249:role/cloud-sheriff-lambda-execution-role
       events:
         - CreateDBInstance
     filters:

@@ -32,8 +32,6 @@ policies:
             Transitions:
               - Days: 181
                 StorageClass: STANDARD_IA
-            NoncurrentVersionExpiration:
-                NoncurrentDays: 35
   # - name: s3-set-bucket-encryption
   #   resource: s3
   #   actions:

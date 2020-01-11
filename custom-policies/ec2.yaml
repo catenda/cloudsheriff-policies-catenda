@@ -6,17 +6,17 @@ policies:
   - name: ec2-long-running-instances
     resource: ec2
     comment: |
-      Report running instances older than 30 days
+      Report running instances older than 15 days
     filters:
       - "State.Name": running
       - type: instance-age
-        days: 30
+        days: 15
     actions:
       - type: post-finding
         compliance_status: WARNING
         criticality: 25
         description: |
-          EC2 instance has been running for over 30 days.
+          EC2 instance has been running for over 15 days.
         recommendation: Examine the EC2 instance to see if it should be retired.
         severity_normalized: 25
         title: ec2-long-running-instances

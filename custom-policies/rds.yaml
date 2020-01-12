@@ -34,7 +34,7 @@ policies:
       - type: value
         value_type: age
         key: InstanceCreateTime
-        value: 13
+        value: 10
         op: greater-than
       - <<: *metrics-filter
     actions:

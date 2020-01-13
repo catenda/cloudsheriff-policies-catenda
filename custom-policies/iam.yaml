@@ -58,7 +58,7 @@ policies:
         compliance_status: FAILED
         criticality: 50
         description: |
-          Inactive users - those without any activity in the last 90 days - should be deactivated.
+          Inactive users - those without any activity in the last 60 days - should be deactivated.
         fields:
           big-cloud-country/cloud-sheriff/policy-name: iam-users-with-old-password
         recommendation: Deactivate the users.
@@ -70,13 +70,13 @@ policies:
          - "Sensitive Data Identifications/Passwords"
         confidence: 100
     resource: iam-user
-    description: finds users with last activity greater than 90 days prior.
+    description: finds users with last activity greater than 60 days prior.
     filters:
       - or:
         - type: credential
           key: access_keys.last_used_date
           value_type: age
-          value: 90
+          value: 60
           op: greater-than
         - type: access-key
           key: Status

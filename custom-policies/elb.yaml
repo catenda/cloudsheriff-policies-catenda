@@ -8,3 +8,11 @@ policies:
     actions:
       - type: invoke-lambda
         function: cloud-sheriff-notification
+  - name: elb-is-logging-test
+    resource: elb
+    filters:
+      - type: is-logging
+  - name: elb-using-ssl
+    resource: elb
+    filters:
+      - type: is-ssl

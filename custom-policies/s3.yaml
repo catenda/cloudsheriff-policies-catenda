@@ -30,7 +30,7 @@ policies:
             Filter:
                Prefix: /
             Transitions:
-              - Days: 160
+              - Days: 150
                 StorageClass: STANDARD_IA
   # - name: s3-set-bucket-encryption
   #   resource: s3

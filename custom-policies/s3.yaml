@@ -16,7 +16,7 @@ policies:
        events:
          - CreateBucket
        <<: *lambda-role
-       timeout: 200
+       timeout: 220
      actions:
        - type: auto-tag-user
          tag: CreatorName

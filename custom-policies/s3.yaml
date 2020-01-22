@@ -16,7 +16,7 @@ policies:
        events:
          - CreateBucket
        <<: *lambda-role
-       timeout: 200
+       timeout: 180
      actions:
        - type: auto-tag-user
          tag: CreatorName
@@ -32,9 +32,9 @@ policies:
             Transitions:
               - Days: 180
                 StorageClass: STANDARD_IA
-  # - name: s3-set-bucket-encryption
-  #   resource: s3
-  #   actions:
-  #     - type: set-bucket-encryption
-  #       crypto: AES256
-  #       enabled: True
+  - name: s3-set-bucket-encryption
+    resource: s3
+    actions:
+      - type: set-bucket-encryption
+        crypto: AES256
+        enabled: True
